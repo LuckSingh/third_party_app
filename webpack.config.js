@@ -14,7 +14,12 @@ module.exports = {
         ],
         'bundleUnlockUsing': [
             './src/unlockUsing'
+        ],
+        'bundleMechanicalUsing': [
+            './src/mechanicalUsing'
         ]
+
+
     },
     output: {
         filename: '[name].js',

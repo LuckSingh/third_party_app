@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 274);
+/******/ 	return __webpack_require__(__webpack_require__.s = 283);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23910,107 +23910,28 @@ var $export = __webpack_require__(26)
 $export($export.S, 'Object', {create: __webpack_require__(73)});
 
 /***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _getPrototypeOf = __webpack_require__(86);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(87);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(88);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(89);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(90);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(48);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(49);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Alert = function (_React$Component) {
-    (0, _inherits3.default)(Alert, _React$Component);
-
-    function Alert(props) {
-        (0, _classCallCheck3.default)(this, Alert);
-        return (0, _possibleConstructorReturn3.default)(this, (Alert.__proto__ || (0, _getPrototypeOf2.default)(Alert)).call(this, props));
-    }
-
-    (0, _createClass3.default)(Alert, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: this.props.alert ? "AlertAll" : "AlertAll hide" },
-                _react2.default.createElement(
-                    'div',
-                    { className: this.props.alert ? "AlertContain" : "AlertContain hide" },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertTitle' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            this.props.alertMsg
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertDesc ' },
-                        _react2.default.createElement(
-                            'span',
-                            { onClick: this.comfirm },
-                            '\u77E5\u9053\u4E86 '
-                        )
-                    )
-                ),
-                _react2.default.createElement('div', { className: 'AlertBg' })
-            );
-        }
-    }]);
-    return Alert;
-}(_react2.default.Component);
-
-exports.default = Alert;
-
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Alert.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ }),
+/* 269 */,
 /* 270 */,
 /* 271 */,
 /* 272 */,
 /* 273 */,
-/* 274 */
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(275);
+module.exports = __webpack_require__(284);
 
 
 /***/ }),
-/* 275 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24025,18 +23946,18 @@ var _reactDom = __webpack_require__(49);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _LoadingComponent = __webpack_require__(276);
+var _UnlockMechanicalUsingComponent = __webpack_require__(285);
 
-var _LoadingComponent2 = _interopRequireDefault(_LoadingComponent);
+var _UnlockMechanicalUsingComponent2 = _interopRequireDefault(_UnlockMechanicalUsingComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_LoadingComponent2.default, null), document.getElementById('loadingContainer'));
+_reactDom2.default.render(_react2.default.createElement(_UnlockMechanicalUsingComponent2.default, null), document.getElementById('unlockMechanicalUsing'));
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "loading.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "mechanicalUsing.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 276 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24075,51 +23996,36 @@ var _reactDom = __webpack_require__(49);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Alert = __webpack_require__(269);
-
-var _Alert2 = _interopRequireDefault(_Alert);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var LoadingComponent = function (_React$Component) {
-    (0, _inherits3.default)(LoadingComponent, _React$Component);
+var UnlockMechanicalUsingComponent = function (_React$Component) {
+    (0, _inherits3.default)(UnlockMechanicalUsingComponent, _React$Component);
 
-    function LoadingComponent(props) {
-        (0, _classCallCheck3.default)(this, LoadingComponent);
+    function UnlockMechanicalUsingComponent(props) {
+        (0, _classCallCheck3.default)(this, UnlockMechanicalUsingComponent);
 
-        var _this = (0, _possibleConstructorReturn3.default)(this, (LoadingComponent.__proto__ || (0, _getPrototypeOf2.default)(LoadingComponent)).call(this, props));
+        var _this = (0, _possibleConstructorReturn3.default)(this, (UnlockMechanicalUsingComponent.__proto__ || (0, _getPrototypeOf2.default)(UnlockMechanicalUsingComponent)).call(this, props));
 
-        _this.state = {
-            // 动画效果
-            spinner: true,
-            alert: false,
-            alertMsg: ''
-        };
+        _this.state = {};
         return _this;
     }
 
-    (0, _createClass3.default)(LoadingComponent, [{
+    (0, _createClass3.default)(UnlockMechanicalUsingComponent, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    'div',
-                    { className: this.state.spinner ? "spinner" : "spinner spinnerHide" },
-                    _react2.default.createElement('div', { className: 'double-bounce1' }),
-                    _react2.default.createElement('div', { className: 'double-bounce2' })
-                ),
-                _react2.default.createElement(_Alert2.default, { alert: this.state.alert, alertMsg: this.state.alertMsg, comfirm: this.comfirm })
+                'aaaa'
             );
         }
     }]);
-    return LoadingComponent;
+    return UnlockMechanicalUsingComponent;
 }(_react2.default.Component);
 
-exports.default = LoadingComponent;
+exports.default = UnlockMechanicalUsingComponent;
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "LoadingComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/workplace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "UnlockMechanicalUsingComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ })
 /******/ ]);
