@@ -1,0 +1,66 @@
+/*首页*/
+ .index-content{
+ 	width:100%;
+ 	height:100%;
+ }
+ .head{
+ 	width:100%;
+ 	height:18.304rem;
+ 	background: url(../img/bjColor.png) no-repeat;
+ 	background-size: 100%;
+ 	position: relative;
+ }
+ .btn_scan{
+ 	width:12.8rem;
+ 	height:2.133333rem;
+ 	position: absolute;
+ 	bottom: 0rem;
+ 	left:0;
+ 	right:0;
+ 	background: url(../img/btn_logo.png) no-repeat;
+ 	background-size:100%;
+ 	text-align: center;
+ 	line-height: 2.133333rem;
+ 	margin: auto;
+ 	color:#fff;
+ 	font-size: 0.768rem;
+ }
+ .btn_scan em{
+ 	width:0.768rem;
+ 	height:0.768rem;
+ 	display: inline-block;
+ 	margin-right: 0.3rem;
+ 	top: 0.1rem;
+    position: relative;
+ 	background: url(../img/scan.png) no-repeat;
+ 	background-size: 100%
+ }
+ 
+ .avtive_cur{
+ 	width: 100%;
+ 	position: absolute;
+ 	text-align: center;
+ 	bottom:0.682667rem;
+ 	font-size: 0.597333rem;
+ 	color:#999999;
+ 	
+ }
+.person{
+	position: absolute;
+	left:0.426667rem;
+	top:0.426667rem;
+	width:1.194667rem;
+	height:1.194667rem;
+	border-radius: 50%;
+	z-index: 10;
+}
+.person img{
+	width:100%;
+	height:100%;
+}
+
+
+
+
+
+

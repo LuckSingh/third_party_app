@@ -1,0 +1,238 @@
+ html,body{
+  height: 100%;
+ }
+.hide{
+  display: none;
+}
+
+
+ /*测试密码*/
+ .passName{
+  width:100%;
+  height:100%;
+  background: #000;
+  position: absolute;
+  left:0;
+  top:0;
+  opacity: .8;
+ }
+ .passName input{
+  
+  width:8.533333rem;
+  height:42px;
+  border:none ;
+  outline: none;
+  position: absolute;
+  left:50%;
+  top:30%;
+  margin-left:-4.25rem;
+ }
+ .passName.passNameHide{
+  display: none;
+ }
+ /*加载动画gif图*/
+ .unlocking{
+  width:100%;
+  height:100%;
+  position: absolute;
+  background: #f1f1f1;
+
+ }
+ .unlocking.unlockingHide{
+  display: none;
+ }
+ .unlocking img{
+  width:100%;
+  height:100%;
+ }
+  .unlocking p{
+    margin-top:3.28rem;
+    font-size: 1.024rem;
+    color:#222222;
+    text-align: center;
+    margin-bottom: 0.597333rem;
+  }
+ .spinner.spinnerHide{
+  display: none;
+ }
+ .spinner {
+  width: 4.266667rem;
+  height:4.266667rem;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-2.133333rem;
+  margin-top:-4.266667rem;
+}
+ 
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #67CF22;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+   
+  -webkit-animation: bounce 2.0s infinite ease-in-out;
+  animation: bounce 2.0s infinite ease-in-out;
+}
+ 
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+ 
+@-webkit-keyframes bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+ 
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+/*测试按钮*/
+.ensureBtn{
+  color:#fff;
+  position: absolute;
+  z-index: 10;
+  left:50%;
+  top:50%;
+  margin-left:-4.25rem;
+  background: #0090ff;
+  width:200px;
+  height:42px;
+  outline: none;
+  border:none;
+  border-radius: 8px;
+}
+/*解锁中提示*/
+.unlock_waiting{
+  /*width:10.56rem;
+  height:11.52rem;*/
+  width:11.648rem;
+  height:11.093333rem;
+  background-size: 100% 100%; 
+  margin:0 auto;
+  border-radius: 8px;
+}
+.unlock_waiting img{
+  width:100%;
+  height: 100%;
+  border-radius: 8px;
+}
+/*
+
+
+ 弹框*/
+.AlertContain{
+  width:11.093333rem;
+  overflow: hidden;
+  background: #fff;
+  position: absolute;
+  left:50%;
+  top:35%;
+  margin-left:-5.546667rem;
+  margin-top:-3.413333rem;
+  z-index: 120;
+  border-radius: 8px;
+  padding-bottom: 0.853333rem;
+}
+.AlertTitle{
+  margin-bottom: 1.493333rem;
+}
+.AlertTitle p{
+  color:#000;
+  /*width:80%;*/
+  font-size:0.725333rem;
+  text-align: center;
+  padding-top: 2.133333rem;
+  /*position: absolute;
+  left:10%;
+  top:2.133333rem;*/
+
+
+}
+.AlertDesc{
+  width:8.533333rem;
+  overflow: hidden;
+  margin:0 auto;
+}
+.AlertDesc {
+  text-align: center;
+}
+.AlertDesc span,.AlertDesc a{
+  display: inline-block;
+  color:#0090ff;
+  font-size: 16px;
+  text-align: center;
+  width:3.84rem;
+  height: 1.706667rem;
+  box-sizing: border-box;
+  border:1px solid #0090ff;
+  line-height:  1.706667rem;
+  border-radius: 0.170667rem;
+}
+.AlertDesc a{
+  float: right;
+}
+.AlertDesc span.active{
+  color:#fff;
+  background: #0090ff;
+}
+/*.AlertDesc span:first-child{
+  float: left;
+}
+.AlertDesc span:last-child{
+  float:right;
+}*/
+/*背景*/
+.AlertAll,.AlertError,.AlertPay{
+  width:100%;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
+
+}
+/*
+服务器异常弹框样式
+ */
+.AlertError .AlertDesc{
+    text-align: center;
+}
+.AlertError .AlertDesc span:first-child{
+  float: none;
+
+}
+.AlertBg{
+  background: #000;
+  width:100%;
+  height:100%;
+  opacity: .8;
+  z-index: 10;
+  position: relative; 
+}
+/*
+ 退出登录弹窗
+ */
+.AlertLogout{
+  width:100%;
+  height:100%;
+
+  position: absolute;
+  left:0;
+  top:0;
+
+}
+.AlertDesc span.active{
+  color:#fff;
+  background: #0090ff;
+}
