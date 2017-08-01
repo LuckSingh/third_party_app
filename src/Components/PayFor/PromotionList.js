@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-export default class PayForComponent extends React.Component {
+export default class PromotionList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -12,7 +12,7 @@ export default class PayForComponent extends React.Component {
 
     render() {
         return <div>
-            adadasdsadass
+            PromotionList
         </div>;
     }
 }

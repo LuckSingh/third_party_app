@@ -12,7 +12,7 @@ module.exports = {
         'bundleLoading': [
             './src/loading'
         ],
-        'bundleParFor': [
+        'bundlePayFor': [
             './src/payfor'
         ],
         'bundleCoupon': [
