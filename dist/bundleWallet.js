@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 271);
+/******/ 	return __webpack_require__(__webpack_require__.s = 301);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23910,104 +23910,46 @@ var $export = __webpack_require__(26)
 $export($export.S, 'Object', {create: __webpack_require__(71)});
 
 /***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _getPrototypeOf = __webpack_require__(124);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(125);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(126);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(127);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(128);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(77);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(78);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Alert = function (_React$Component) {
-    (0, _inherits3.default)(Alert, _React$Component);
-
-    function Alert(props) {
-        (0, _classCallCheck3.default)(this, Alert);
-        return (0, _possibleConstructorReturn3.default)(this, (Alert.__proto__ || (0, _getPrototypeOf2.default)(Alert)).call(this, props));
-    }
-
-    (0, _createClass3.default)(Alert, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: this.props.alert ? "AlertAll" : "AlertAll hide" },
-                _react2.default.createElement(
-                    'div',
-                    { className: this.props.alert ? "AlertContain" : "AlertContain hide" },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertTitle' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            this.props.alertMsg
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertDesc ' },
-                        _react2.default.createElement(
-                            'span',
-                            { onClick: this.comfirm },
-                            '\u77E5\u9053\u4E86 '
-                        )
-                    )
-                ),
-                _react2.default.createElement('div', { className: 'AlertBg' })
-            );
-        }
-    }]);
-    return Alert;
-}(_react2.default.Component);
-
-exports.default = Alert;
-
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Alert.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ }),
+/* 269 */,
 /* 270 */,
-/* 271 */
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(272);
+module.exports = __webpack_require__(302);
 
 
 /***/ }),
-/* 272 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24022,18 +23964,28 @@ var _reactDom = __webpack_require__(78);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _IndexComponent = __webpack_require__(273);
+var _WalletComponent = __webpack_require__(313);
 
-var _IndexComponent2 = _interopRequireDefault(_IndexComponent);
+var _WalletComponent2 = _interopRequireDefault(_WalletComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_IndexComponent2.default, null), document.getElementById('indexContainer'));
+_reactDom2.default.render(_react2.default.createElement(_WalletComponent2.default, null), document.getElementById('walletContainer'));
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "wallet.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 273 */
+/* 303 */,
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */,
+/* 311 */,
+/* 312 */,
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24072,66 +24024,119 @@ var _reactDom = __webpack_require__(78);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Alert = __webpack_require__(269);
-
-var _Alert2 = _interopRequireDefault(_Alert);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var IndexComponent = function (_React$Component) {
-    (0, _inherits3.default)(IndexComponent, _React$Component);
+var WalletComponent = function (_React$Component) {
+    (0, _inherits3.default)(WalletComponent, _React$Component);
 
-    function IndexComponent(props) {
-        (0, _classCallCheck3.default)(this, IndexComponent);
+    function WalletComponent(props) {
+        (0, _classCallCheck3.default)(this, WalletComponent);
 
-        var _this = (0, _possibleConstructorReturn3.default)(this, (IndexComponent.__proto__ || (0, _getPrototypeOf2.default)(IndexComponent)).call(this, props));
+        var _this = (0, _possibleConstructorReturn3.default)(this, (WalletComponent.__proto__ || (0, _getPrototypeOf2.default)(WalletComponent)).call(this, props));
 
         _this.state = {
-            btn_value: "扫码解锁"
+            balance: '345',
+            couponNum: 0,
+            depositStatus: 0
         };
         return _this;
     }
 
-    (0, _createClass3.default)(IndexComponent, [{
+    (0, _createClass3.default)(WalletComponent, [{
         key: 'render',
         value: function render() {
+            var _state = this.state,
+                balance = _state.balance,
+                couponNum = _state.couponNum,
+                depositStatus = _state.depositStatus;
+
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'wallet' },
                 _react2.default.createElement(
-                    'div',
-                    { className: 'index-content' },
+                    'ul',
+                    { className: 'walletWrap detail' },
                     _react2.default.createElement(
-                        'div',
-                        { onClick: this.handleUser, className: 'person' },
-                        _react2.default.createElement('img', { src: './static/img/person.png', alt: '' })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'head' },
+                        'li',
+                        null,
                         _react2.default.createElement(
-                            'p',
-                            { onClick: this.handleScan, className: 'btn_scan' },
-                            _react2.default.createElement('em', null),
-                            this.state.btn_value
+                            'a',
+                            { href: '' },
+                            '\u603B\u4F59\u989D'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            null,
+                            _react2.default.createElement(
+                                'b',
+                                null,
+                                balance
+                            ),
+                            '\u5143'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'ul',
+                    { className: 'walletWrap' },
+                    _react2.default.createElement(
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: './couponList.html' },
+                            '\u4F18\u60E0\u5238',
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                _react2.default.createElement(
+                                    'i',
+                                    { className: 'coupon_num' },
+                                    couponNum,
+                                    '\u5F20'
+                                ),
+                                _react2.default.createElement('em', null)
+                            )
                         )
                     ),
                     _react2.default.createElement(
-                        'div',
-                        { onClick: this.handleDeposit, className: 'avtive_cur' },
-                        ' \u6211\u7684\u62BC\u91D1 '
+                        'li',
+                        null,
+                        _react2.default.createElement(
+                            'a',
+                            { href: './pledge.html' },
+                            '\u62BC\u91D1',
+                            _react2.default.createElement(
+                                'span',
+                                null,
+                                _react2.default.createElement(
+                                    'i',
+                                    { className: 'deposit_status' },
+                                    depositStatus == 0 ? '未交纳' : '已交纳'
+                                ),
+                                _react2.default.createElement('em', null)
+                            )
+                        )
                     )
                 ),
-                _react2.default.createElement(_Alert2.default, { alert: this.state.alert, openSys: this.openSys, alertMsg: this.state.alertMsg, comfirm: this.comfirm })
+                _react2.default.createElement(
+                    'div',
+                    { className: 'walletBtn' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'wallet_btn' },
+                        '\u4F59\u989D\u5145\u503C'
+                    )
+                )
             );
         }
     }]);
-    return IndexComponent;
+    return WalletComponent;
 }(_react2.default.Component);
 
-exports.default = IndexComponent;
+exports.default = WalletComponent;
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "IndexComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "WalletComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ })
 /******/ ]);

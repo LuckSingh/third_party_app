@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 271);
+/******/ 	return __webpack_require__(__webpack_require__.s = 289);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -23910,104 +23910,34 @@ var $export = __webpack_require__(26)
 $export($export.S, 'Object', {create: __webpack_require__(71)});
 
 /***/ }),
-/* 269 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
-
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _getPrototypeOf = __webpack_require__(124);
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
-var _classCallCheck2 = __webpack_require__(125);
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = __webpack_require__(126);
-
-var _createClass3 = _interopRequireDefault(_createClass2);
-
-var _possibleConstructorReturn2 = __webpack_require__(127);
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = __webpack_require__(128);
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = __webpack_require__(77);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(78);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Alert = function (_React$Component) {
-    (0, _inherits3.default)(Alert, _React$Component);
-
-    function Alert(props) {
-        (0, _classCallCheck3.default)(this, Alert);
-        return (0, _possibleConstructorReturn3.default)(this, (Alert.__proto__ || (0, _getPrototypeOf2.default)(Alert)).call(this, props));
-    }
-
-    (0, _createClass3.default)(Alert, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: this.props.alert ? "AlertAll" : "AlertAll hide" },
-                _react2.default.createElement(
-                    'div',
-                    { className: this.props.alert ? "AlertContain" : "AlertContain hide" },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertTitle' },
-                        _react2.default.createElement(
-                            'p',
-                            null,
-                            this.props.alertMsg
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'AlertDesc ' },
-                        _react2.default.createElement(
-                            'span',
-                            { onClick: this.comfirm },
-                            '\u77E5\u9053\u4E86 '
-                        )
-                    )
-                ),
-                _react2.default.createElement('div', { className: 'AlertBg' })
-            );
-        }
-    }]);
-    return Alert;
-}(_react2.default.Component);
-
-exports.default = Alert;
-
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "Alert.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
-
-/***/ }),
+/* 269 */,
 /* 270 */,
-/* 271 */
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(272);
+module.exports = __webpack_require__(290);
 
 
 /***/ }),
-/* 272 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24022,18 +23952,18 @@ var _reactDom = __webpack_require__(78);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _IndexComponent = __webpack_require__(273);
+var _PledgeComponent = __webpack_require__(291);
 
-var _IndexComponent2 = _interopRequireDefault(_IndexComponent);
+var _PledgeComponent2 = _interopRequireDefault(_PledgeComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_IndexComponent2.default, null), document.getElementById('indexContainer'));
+_reactDom2.default.render(_react2.default.createElement(_PledgeComponent2.default, null), document.getElementById('pledgeContainer'));
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "pledge.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 273 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -24072,66 +24002,108 @@ var _reactDom = __webpack_require__(78);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _Alert = __webpack_require__(269);
-
-var _Alert2 = _interopRequireDefault(_Alert);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var IndexComponent = function (_React$Component) {
-    (0, _inherits3.default)(IndexComponent, _React$Component);
+var PledgeComponent = function (_React$Component) {
+    (0, _inherits3.default)(PledgeComponent, _React$Component);
 
-    function IndexComponent(props) {
-        (0, _classCallCheck3.default)(this, IndexComponent);
+    function PledgeComponent(props) {
+        (0, _classCallCheck3.default)(this, PledgeComponent);
 
-        var _this = (0, _possibleConstructorReturn3.default)(this, (IndexComponent.__proto__ || (0, _getPrototypeOf2.default)(IndexComponent)).call(this, props));
+        var _this = (0, _possibleConstructorReturn3.default)(this, (PledgeComponent.__proto__ || (0, _getPrototypeOf2.default)(PledgeComponent)).call(this, props));
 
         _this.state = {
-            btn_value: "扫码解锁"
+            orderNum: 0,
+            isRule: 0,
+            alert: false,
+            payNum: '0',
+            statePay: true
         };
         return _this;
     }
 
-    (0, _createClass3.default)(IndexComponent, [{
+    (0, _createClass3.default)(PledgeComponent, [{
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'pledge' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'index-content' },
+                    { className: this.state.statePay ? "pledge-content" : "hide" },
                     _react2.default.createElement(
                         'div',
-                        { onClick: this.handleUser, className: 'person' },
-                        _react2.default.createElement('img', { src: './static/img/person.png', alt: '' })
+                        { className: 'pledge-paid-tip' },
+                        ' \u5DF2\u4EA4\u7EB3\u62BC\u91D1(\u5143) '
                     ),
                     _react2.default.createElement(
                         'div',
-                        { className: 'head' },
-                        _react2.default.createElement(
-                            'p',
-                            { onClick: this.handleScan, className: 'btn_scan' },
-                            _react2.default.createElement('em', null),
-                            this.state.btn_value
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { onClick: this.handleDeposit, className: 'avtive_cur' },
-                        ' \u6211\u7684\u62BC\u91D1 '
+                        { className: 'pledge-paid-num' },
+                        ' ',
+                        this.state.payNum,
+                        ' '
                     )
                 ),
-                _react2.default.createElement(_Alert2.default, { alert: this.state.alert, openSys: this.openSys, alertMsg: this.state.alertMsg, comfirm: this.comfirm })
+                _react2.default.createElement(
+                    'div',
+                    { className: this.state.statePay ? "hide" : "pledge-backgroud" },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'pledge-backgroud-content' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'pledge-paid-num' },
+                            ' ',
+                            this.state.payNum,
+                            ' '
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'need-pay' },
+                            ' \u9700\u8981\u4EA4\u7EB3',
+                            _react2.default.createElement(
+                                'span',
+                                { className: 'need-pay-num' },
+                                ' ',
+                                this.state.payNum,
+                                ' '
+                            ),
+                            '\u5143\uFF0C\u62BC\u91D1\u53EF\u5168\u989D\u9000'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: this.state.statePay ? "hide" : "pledge-opt" },
+                            _react2.default.createElement(
+                                'button',
+                                { className: 'pay-btn', onClick: this.pay },
+                                _react2.default.createElement(
+                                    'span',
+                                    { className: 'pay-text' },
+                                    ' \u94F6\u8054\u652F\u4ED8 '
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'refund-tip' },
+                                ' \u6240\u4EA4\u62BC\u91D1\u901A\u8FC7APP\u968F\u65F6\u9000\u6B3E '
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'have-pledge', onClick: this.returnMoney },
+                            '\u62BC\u91D1\u9000\u6B3E '
+                        )
+                    )
+                )
             );
         }
     }]);
-    return IndexComponent;
+    return PledgeComponent;
 }(_react2.default.Component);
 
-exports.default = IndexComponent;
+exports.default = PledgeComponent;
 
-/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "IndexComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/enterpress/Documents/studySpace/third_party_app/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "PledgeComponent.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ })
 /******/ ]);

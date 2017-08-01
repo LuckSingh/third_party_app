@@ -12,6 +12,33 @@ module.exports = {
         'bundleLoading': [
             './src/loading'
         ],
+        'bundleParFor': [
+            './src/payfor'
+        ],
+        'bundleCoupon': [
+            './src/coupon'
+        ],
+        'bundleCouponList': [
+            './src/couponList'
+        ],
+        'bundleAuthent': [
+            './src/authent'
+        ],
+        'bundlePledge': [
+            './src/pledge'
+        ],
+        'bundleRecharge': [
+            './src/recharge'
+        ],
+        'bundleTrip': [
+            './src/trip'
+        ],
+        'bundleUser': [
+            './src/user'
+        ],
+        'bundleWallet': [
+            './src/wallet'
+        ],
         'bundleUnlockUsing': [
             './src/unlockUsing'
         ],

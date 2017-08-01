@@ -155,6 +155,10 @@ font-family: arial,sans-serif;
 .color-title {
 	color:#666;
 }
+
+.hide{
+  display: none;
+}
 input {
 	-webkit-appearance:none;
 }
