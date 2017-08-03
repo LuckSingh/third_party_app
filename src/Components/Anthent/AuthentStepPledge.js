@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-export default class AnthentComponent extends React.Component {
 
+export default class AuthentStepPledge extends React.Component {
     constructor(props) {
         super(props);
 
@@ -13,10 +13,11 @@ export default class AnthentComponent extends React.Component {
 
     render() {
         return (
-            <div>
-                <AuthentStep data={this.state}/>
-                {this.props.children}
+            <div className = "authent-content" >
+                <Cost payNum = { this.state.getPayNum.payNum }/> 
+                <PayBtn/>
             </div>
         );
     }
 }
+
