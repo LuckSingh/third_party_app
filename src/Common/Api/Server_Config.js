@@ -1,7 +1,6 @@
-import { sessionSave } from '../SessionStorage';
-//import {ent} from '../CommonFn';
-var CommonFn = require('../CommonFn.js')
-var sessionUa = CommonFn.getSessionUa();
+import CommonFn from '../Public/CommonFn'
+
+var sessionUa = CommonFn.GetSessionUa();
 var URL_CHANNEL = sessionUa ? sessionUa.channel : '';
 var SERVER = {
     // TEST: 'http://101.200.132.205:8080/bluegogo_backend_http/h5/',

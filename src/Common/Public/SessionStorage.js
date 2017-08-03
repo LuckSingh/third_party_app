@@ -1,4 +1,4 @@
-export function sessionSave(nameSpace, data) {
+export function SessionSave(nameSpace, data) {
     //存取操作
     if (!!data || data === 0) {
         sessionStorage.setItem(nameSpace, JSON.stringify(data));

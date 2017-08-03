@@ -8,9 +8,7 @@ export default class AuthentStep extends React.Component {
 
         }
     }
-    componentDidUpdate() {
-        //console.log(this.props.data)
-    }
+
     render() {
         let state = this.props.data;
         return (

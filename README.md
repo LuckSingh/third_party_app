@@ -13,3 +13,10 @@ views:
 	unlockUsing--智能锁解锁用车
 	user--用户中心
 	wallet--钱包页面
+接口:
+
+index: binding/state
+pledge: deposit/authStatus
+user:userInfo
+wallet:userInfo/voucherList/rechargeState/wallet
+recharge:rechargeInfo/recharge

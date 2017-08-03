@@ -1,0 +1,91 @@
+body,html{
+	width:100%;
+	height:auto!important;
+	font-size:0.597333rem;
+	font-family: "PingFangSC",'微软雅黑';
+	box-sizing: border-box;
+}
+.hide{
+	display: none;
+}
+.recharge-param{
+	height:9.642667rem;
+	width:100%;
+	display: flex;
+	flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	justify-content: space-between;
+	-webkit-justify-content: space-between;
+}
+.recharge-money{
+	width:7.210667rem;
+	height:2.986667rem;
+	box-sizing: border-box;
+	border:1px solid #ddd;
+	display: flex;
+	justify-content: center;
+	-webkit-justify-content: center;
+	align-items: center;
+	-webkit-align-items: center;
+}
+.recharge-money ul{
+	box-sizing: border-box;
+}
+.reactive{
+	border:1px solid #4287ff;
+	background-color: #f6faff;
+}
+.recharge-money ul li:first-child{
+	color:#212121;
+}
+.recharge-money ul li:last-child{
+	color:#4287ff;
+	font-weight: 400;
+}
+.pay-container{
+	text-align: center;
+}
+
+.pay-btn {
+    width: 14.293333rem;
+    height: 2.133333rem;
+    background-color: #0090ff;
+    border: 0;
+    border-radius: 0.213333rem;
+    outline: none;
+}
+.pay-text {
+    display: inline-block;
+    width: 3.584rem;
+    height: 0.810667rem;
+    vertical-align: middle;
+    margin-left: 0.213333rem;
+    font-family: 'PingFang SC';
+    font-size: 0.682667rem;
+    color: #fff;
+}
+
+/*
+充值协议
+ */
+.rules{
+	width:100%;
+	margin:0.426667rem auto 0;
+	text-align: center;
+}
+
+.container .rules p{
+	text-align: center;
+}
+.container .rules p span:last-child{
+	color:#0853ff;
+	font-size: 12px;
+	font-weight: 300;
+}
+.container .rules p span:last-child a{
+	color:#0853ff;
+}
+.container .rules p span:first-child{
+	color:#999;
+	font-size: 12px;
+}

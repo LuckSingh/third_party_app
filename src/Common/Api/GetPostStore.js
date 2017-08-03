@@ -1,5 +1,5 @@
 var url = require('./URL_Config.js');
-import { sessionSave } from '../SessionStorage';
+import { SessionSave } from '../Public/SessionStorage';
 
 let client = navigator.appVersion.split(' ')[0].split('.')[0];
 while (client.length < 5) {
@@ -9,9 +9,9 @@ while (client.length < 5) {
 //ajax 公用方法
 function GetPostStore(urlStr, da, suc, err) {
 
-    var channel = sessionSave('bgg_config') ? sessionSave('bgg_config')["channel"] : '';
+    var channel = SessionSave('bgg_config') ? SessionSave('bgg_config')["channel"] : '';
     var clientInfo = '14100,' + channel + ',2,' + client;
-    var token = sessionSave('token') || '';
+    var token = SessionSave('bgg_token') || '';
     $.ajax({
         url: urlStr,
         type: 'post',
@@ -45,17 +45,17 @@ function GetPostStore(urlStr, da, suc, err) {
                         err: err
                     };
                     //var bgg_config_data = sessionSave('bgg_config');
-                    sessionSave('bgg_temp_requestObj', tempRequestObj);
+                    SessionSave('bgg_temp_requestObj', tempRequestObj);
                     //TODO: 在入口存储手机号和城市
                     binding({
-                        citycode: sessionSave('bgg_cityCode'),
-                        verifyObj: sessionSave('bgg_config').customer_item
+                        citycode: SessionSave('bgg_cityCode'),
+                        verifyObj: SessionSave('bgg_config').customer_item
                     }, function(res) {
                         if (res.code == 0) {
                             //静默重新绑定token成功后，记录新tokenm,并且再此发起之前上下文中的请求
-                            sessionSave('token', res.object.authtoken);
+                            SessionSave('bgg_token', res.object.authtoken);
 
-                            tempRequestObj = sessionSave('bgg_temp_requestObj');
+                            tempRequestObj = SessionSave('bgg_temp_requestObj');
                             let {urlStr, da, suc, err} = tempRequestObj;
                             GetPostStore(urlStr, da, suc, err);
                         } else {
@@ -179,10 +179,7 @@ function lockBikeBrief(da, suc, err) {
 function pay(da, suc, err) {
     GetPostStore(url.getPay(), da, suc, err);
 }
-//支付宝获取授权地址
-// function authUrl(da,suc,err){
-//     GetPostStore(url.getAuthUrl(),da,suc,err);
-// }
+
 //芝麻信用免押金
 function zmxyDeposit(da, suc, err) {
     GetPostStore(url.getZmxyDeposit(), da, suc, err);

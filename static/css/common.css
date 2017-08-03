@@ -96,40 +96,14 @@
     -webkit-transform: scale(1.0);
   }
 }
-/*测试按钮*/
-.ensureBtn{
-  color:#fff;
-  position: absolute;
-  z-index: 10;
-  left:50%;
-  top:50%;
-  margin-left:-4.25rem;
-  background: #0090ff;
-  width:200px;
-  height:42px;
-  outline: none;
-  border:none;
-  border-radius: 8px;
-}
-/*解锁中提示*/
-.unlock_waiting{
-  /*width:10.56rem;
-  height:11.52rem;*/
-  width:11.648rem;
-  height:11.093333rem;
-  background-size: 100% 100%; 
-  margin:0 auto;
-  border-radius: 8px;
-}
-.unlock_waiting img{
+/*弹框*/
+.AlertAll{
   width:100%;
-  height: 100%;
-  border-radius: 8px;
+  height:100%;
+  position: absolute;
+  left:0;
+  top:0;
 }
-/*
-
-
- 弹框*/
 .AlertContain{
   width:11.093333rem;
   overflow: hidden;
@@ -155,60 +129,16 @@
   /*position: absolute;
   left:10%;
   top:2.133333rem;*/
-
-
 }
 .AlertDesc{
   width:8.533333rem;
   overflow: hidden;
   margin:0 auto;
-}
-.AlertDesc {
   text-align: center;
-}
-.AlertDesc span,.AlertDesc a{
-  display: inline-block;
-  color:#0090ff;
-  font-size: 16px;
-  text-align: center;
-  width:3.84rem;
-  height: 1.706667rem;
-  box-sizing: border-box;
-  border:1px solid #0090ff;
-  line-height:  1.706667rem;
-  border-radius: 0.170667rem;
-}
-.AlertDesc a{
-  float: right;
 }
 .AlertDesc span.active{
   color:#fff;
   background: #0090ff;
-}
-/*.AlertDesc span:first-child{
-  float: left;
-}
-.AlertDesc span:last-child{
-  float:right;
-}*/
-/*背景*/
-.AlertAll,.AlertError,.AlertPay{
-  width:100%;
-  height:100%;
-  position: absolute;
-  left:0;
-  top:0;
-
-}
-/*
-服务器异常弹框样式
- */
-.AlertError .AlertDesc{
-    text-align: center;
-}
-.AlertError .AlertDesc span:first-child{
-  float: none;
-
 }
 .AlertBg{
   background: #000;
@@ -218,19 +148,17 @@
   z-index: 10;
   position: relative; 
 }
-/*
- 退出登录弹窗
- */
-.AlertLogout{
-  width:100%;
-  height:100%;
 
-  position: absolute;
-  left:0;
-  top:0;
 
-}
-.AlertDesc span.active{
-  color:#fff;
-  background: #0090ff;
-}
+
+
+
+
+
+
+
+
+
+
+
+

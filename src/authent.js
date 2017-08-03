@@ -3,9 +3,9 @@ import ReactDom from 'react-dom';
 import { Router, Route, hashHistory, IndexRoute, Redirect, IndexRedirect } from 'react-router';
 import AnthentComponent from './Components/Anthent/AnthentComponent'
 //import AnthentComponent from './Components/Anthent/Anthent'
-import AuthentStep01 from './Components/Anthent/AuthentStep01'
-import AuthentStep02 from './Components/Anthent/AuthentStep02'
-import AuthentStep03 from './Components/Anthent/AuthentStep03'
+import AuthentStepPledge from './Components/Anthent/AuthentStepPledge'
+import AuthentStepAuth from './Components/Anthent/AuthentStepAuth'
+import AuthentStepComplete from './Components/Anthent/AuthentStepComplete'
 ReactDom.render(
     <Router history={hashHistory}>
 		<Route path="/" component={AnthentComponent}>
