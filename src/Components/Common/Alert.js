@@ -12,7 +12,7 @@ export default class Alert extends React.Component {
                     <p>{ this.props.alertMsg }</p>
                 </div>
                 <div className = "AlertDesc " >
-                    <span onClick = { this.comfirm }>知道了 </span> 
+                    <span onClick = { this.props.comfirm}>知道了 </span> 
                 </div> 
             </div>
             <div className = "AlertBg" ></div>                   

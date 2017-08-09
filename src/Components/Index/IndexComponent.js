@@ -16,6 +16,7 @@ export default class IndexComponent extends React.Component {
             alertMsg: '', //内容
             alertType: '' //点击跳转的地址
         }
+        this.comfirm = this.comfirm.bind(this);
     }
     componentDidMount() {
         var self = this;
@@ -105,11 +106,11 @@ export default class IndexComponent extends React.Component {
         })
     }
     comfirm() {
-        let {alertType} = this.state;
         //判断是没有支付，还是用车中
-        if (alert_type == 'pay') {
+        let {alertType} = this.state;
+        if (alertType == 'pay') {
             Navigate.toPayfor();
-        } else if (this.state.type == 'unlockbike') {
+        } else if (alertType == 'unlockbike') {
             Navigate.toUnlockUsing();
         } else {
             Navigate.toUnlockMechanicalUsing();
@@ -120,7 +121,13 @@ export default class IndexComponent extends React.Component {
         Navigate.toPledge();
     }
     //扫码用车
-    handleScan() {}
+    handleScan() {
+        //扫码成功之后 应该是一个地址
+        var result = 'https://www.bluegogo.com/qrcode.html?no=010000126';
+        var bikeNo = result.split("no=")[1];
+        SessionSave('bgg_bikeNo', bikeNo);
+        Navigate.toLoading();
+    }
     //用户中心
     handleUser() {
         Navigate.toUser();
@@ -138,7 +145,7 @@ export default class IndexComponent extends React.Component {
                 </div>  
                 <div onClick={this.handlePledge} className = "avtive_cur" > 我的押金 </div> 
             </div>
-            <Alert alert = { this.state.alert } alertMsg = { this.state.alertMsg } comfirm = { this.comfirm } /> 
+            <Alert alert = { this.state.alert } alertMsg = { this.state.alertMsg } comfirm = { this.comfirm} data = {this.state} /> 
         </div>;
     }
 }

@@ -1,44 +1,85 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { SessionSave } from '../../Common/Public/SessionStorage'
+import GetPostStore from '../../Common/Api/GetPostStore'
+import Navigate from '../../Common/Public/Navigate'
+import CommonFn from '../../Common/Public/CommonFn'
+var paySuccess = CommonFn.StringURLToJSON(location.search);
+var orderId = SessionSave('bgg_orderId')
 export default class PayForComponent extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            totalCnt: 0,
+            actualPrice: 0,
+            activityOrder: 0,
+            activityBenefit: 0,
+            rawPrice: 0,
+            useTime: 0,
+            activityNormalPrice: 0,
             privilegeDiscount: 0,
-            activityPriceP: 0,
-            amount: 0,
-            timeStr: 0,
+            isPrivilege: 0,
+            activityNormalTime: 0,
             usePrice: 0,
-            payLabel: '银联支付'
+            voucher: {
+                amount: 0
+            },
         }
     }
 
+    componentDidMount() {
+        let self = this;
+        if (!!paySuccess && paySuccess.paySuccess) {
+            if (paySuccess.paySuccess == 1) {
+                //强刷
+                var isForce = 1;
+                self.isForce(isForce);
+            }
+        } else {
+
+            var isForce = 0;
+            self.isForce(isForce);
+        }
+    }
+    isForce(isForce) {
+        var param = {
+            orderId: orderId,
+            isForce: isForce
+        }
+        GetPostStore.orderDetail(param, (res) => {
+            if (res.errorCode.toString() == '9999') {
+                return;
+            } else if (res.data.order.status.toString() == '0') {
+                Navigate.toTrip();
+            }
+            //负值请求的数据
+            this.setState(res.data.order);
+        })
+    }
+
     render() {
-        let {totalCnt, privilegeDiscount, activityPriceP, amount, timeStr, usePrice, payLabel} = this.state;
-        // var payLabel = sessionSave('bgg_config_init').payLabel;
-        // var useTime = this.state.useTime,
-        //     usePrice = this.state.rawPrice;
-        // if (this.state.activityOrder) {
-        //     useTime = this.state.activityNormalTime;
-        //     usePrice = this.state.activityNormalPrice;
-        // }
-        // let useMinute = Math.ceil(useTime / 60);
-        // let useHours = parseInt(useMinute / 60);
-        // let timeStr = useHours > 0 ?
-        //     (useHours + '小时' + Math.ceil(useMinute % 60) + '分钟') : (Math.ceil(useMinute) + '分钟');
+        let {activityOrder, usePrice, activityNormalTime, activityNormalPrice, useTime, rawPrice, voucher, activityBenefit, isPrivilege, voucherAmount, actualPrice} = this.state;
+        var payLabel = SessionSave('bgg_config_init').payLabel;
 
-        // let amount = this.state.voucher ? this.state.voucherAmount ? this.state.voucherAmount : (this.state.voucher.amount / 100) : '0';
-        // let privilegeDiscount = this.state.isPrivilege ? (this.state.privilegeDiscount / 100).toFixed(2) : 0;
-        // let activityPriceP = this.state.activityOrder ? this.state.activityBenefit / 100 : 0;
 
-        // var totalCnt = (this.state.voucher ? this.state.actualPrice - amount * 100 <= 0 ? 0 : (this.state.actualPrice - amount * 100) / 100 : this.state.actualPrice / 100).toFixed(2);
-        // if (totalCnt + '' == 'NaN') {
-        //     totalCnt = '0.00';
-        // }
+        if (activityOrder) {
+            useTime = activityNormalTime;
+            usePrice = activityNormalPrice;
+        }
+        let useMinute = Math.ceil(useTime / 60);
+        let useHours = parseInt(useMinute / 60);
+        let timeStr = useHours > 0 ?
+            (useHours + '小时' + Math.ceil(useMinute % 60) + '分钟') : (Math.ceil(useMinute) + '分钟');
 
+        let amount = voucher ? voucherAmount ? voucherAmount : (voucher.amount / 100) : '0';
+        let privilegeDiscount = isPrivilege ? (privilegeDiscount / 100).toFixed(2) : 0;
+        let activityPriceP = activityOrder ? activityBenefit / 100 : 0;
+
+        var totalCnt = (voucher ? actualPrice - amount * 100 <= 0 ? 0 : (actualPrice - amount * 100) / 100 : actualPrice / 100).toFixed(2);
+        if (totalCnt + '' == 'NaN') {
+            totalCnt = '0.00';
+        }
         return (
             <div className = "detail" >
                 <div className = "detail_money">
@@ -47,7 +88,7 @@ export default class PayForComponent extends React.Component {
                         <span> { totalCnt } </span> 
                         <span> 元 </span> 
                     </p> 
-                    <div className = {(this.state.activityOrder || this.state.voucher || this.state.isPrivilege) ? "detail_promotion_tag " : "detail_promotion_tag detail_promotion_tagHide"}>已优惠 {-(-privilegeDiscount - activityPriceP - amount) }  元 </div> 
+                    <div className = {(activityOrder || voucher || isPrivilege) ? "detail_promotion_tag " : "detail_promotion_tag detail_promotion_tagHide"}>已优惠 {-(-privilegeDiscount - activityPriceP - amount) }  元 </div> 
                 </div> 
                 <div className = "detail_tit">
                     <div className = "detail_txt" > 费用详情 </div> 
