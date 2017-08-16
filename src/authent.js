@@ -15,5 +15,5 @@ ReactDom.render(
 			<Route path="/complete" component={AuthentStepComplete}/>
 		</Route>
 	</Router>,
-    document.getElementById('anthentContainer')
+    document.getElementById('authentContainer')
 );

@@ -39,6 +39,15 @@ function toWallet() {
 function toUser() {
     location.replace('./user.html');
 }
+//链接的押金
+function toDeposit() {
+    location.replace('./authent.html#/pledge');
+}
+//链接的实名认证
+function toAuth() {
+    location.replace('./authent.html#/auth');
+}
+
 module.exports = {
     toIndex: toIndex,
     toLoading: toLoading,
@@ -49,5 +58,7 @@ module.exports = {
     toPledge: toPledge,
     toRecharge: toRecharge,
     toWallet: toWallet,
-    toUser: toUser
+    toUser: toUser,
+    toDeposit: toDeposit,
+    toAuth: toAuth
 }

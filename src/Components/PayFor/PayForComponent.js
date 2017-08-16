@@ -4,6 +4,7 @@ import { SessionSave } from '../../Common/Public/SessionStorage'
 import GetPostStore from '../../Common/Api/GetPostStore'
 import Navigate from '../../Common/Public/Navigate'
 import CommonFn from '../../Common/Public/CommonFn'
+import Alert from '../Common/Alert'
 var paySuccess = CommonFn.StringURLToJSON(location.search);
 var orderId = SessionSave('bgg_orderId')
 export default class PayForComponent extends React.Component {
@@ -22,10 +23,17 @@ export default class PayForComponent extends React.Component {
             isPrivilege: 0,
             activityNormalTime: 0,
             usePrice: 0,
+            voucherAmount: '',
             voucher: {
                 amount: 0
             },
+            alert: false,
+            alertMsg: ''
         }
+
+        this.bundlePromo = this.bundlePromo.bind(this);
+        this.handlePay = this.handlePay.bind(this);
+        this.comfirm = this.comfirm.bind(this);
     }
 
     componentDidMount() {
@@ -42,6 +50,99 @@ export default class PayForComponent extends React.Component {
             self.isForce(isForce);
         }
     }
+    //支付
+    handlePay() {
+        var self = this;
+        let amount = this.state.voucher ? this.state.voucherAmount ? this.state.voucherAmount : (this.state.voucher.amount /
+        100) : '0';
+        let voucherId = this.state.voucher ? ((this.state.voucherId == '0')) ? this.state.voucher.voucherId : this.state
+            .voucherId : 0;
+
+        // 优雅的三元判断
+        let price = this.state.activityOrder ? this.state.voucher ? ((this.state.activityNormalPrice + this.state.activityPrice) -
+        amount * 100 <= 0 ? 0 : this.state.rawPrice - amount * 100) / 100 : (this.state.activityNormalPrice + this.state
+            .activityPrice) / 100 : this.state.voucher ? (this.state.rawPrice - amount * 100 <= 0 ? 0 : this.state.rawPrice -
+        amount * 100) / 100 : this.state.rawPrice / 100
+
+        //获取默认voucherId
+        var data = null;
+        var bgg_config = SessionSave('bgg_config');
+        var realCnt = $('.detail_money').find('p').find('span').eq(1).html();
+        if (realCnt == 0) {
+            payType = 2;
+        }
+
+        //参数还是没有确定
+        var h = {
+            voucherId: voucherId,
+            orderId: SessionSave('bgg_orderId'),
+            customerItem: SessionSave('bgg_config').customer_item,
+            channel: SessionSave('bgg_config').payChannel
+        }
+
+        GetPostStore.pay(h, (data) => {
+            console.log(data);
+            switch (data.errorCode) {
+            case 0:
+                //成功了
+                location.href = data.data.charge;
+                break;
+            case 1029:
+                location.replace('./trip.html');
+                break;
+            case 1702:
+                //流水号失效 跳转到九宫格||跳转到扫码页面
+                this.setState({
+                    alert: true,
+                    alertMsg: data.errorMsg,
+                    type: '1702'
+                })
+                break;
+            case 1042:
+                //支付失败
+                //alert('支付失败');
+                break;
+            case 1032:
+                this.setState({
+                    alert: true,
+                    alertMsg: data.errorMsg,
+                    type: '1032'
+                })
+                break;
+            default:
+                this.setState({
+                    alert: true,
+                    alertMsg: data.errorMsg,
+                    type: 'index'
+                })
+                break;
+            }
+        });
+    }
+
+    comfirm() {
+        this.setState({
+            alert: false
+        })
+
+        switch (this.state.type) {
+
+        case '1042':
+
+            break;
+        case '1032':
+            location.replace('./trip.html');
+            break;
+        case '1702':
+            location.href = 'unionpay://cn.cupdata.unionpay?method=finish';
+            break;
+        default:
+            location.replace('./index.html');
+            break;
+        }
+    }
+
+
     isForce(isForce) {
         var param = {
             orderId: orderId,
@@ -57,7 +158,20 @@ export default class PayForComponent extends React.Component {
             this.setState(res.data.order);
         })
     }
+    bundlePromo() {
+        if (!this.state.voucher) return;
+        //只有初始加载的时候voucherId才等于‘’
+        //
+        if (this.state.voucherId == '0') {
+            this.setState({
+                voucherId: this.state.voucher.voucherId,
+                voucherTitle: this.state.voucher.title,
+                voucherAmount: this.state.voucher.amount / 100
+            })
+        }
 
+        location.hash = "/promotion"
+    }
     render() {
         let {activityOrder, usePrice, activityNormalTime, activityNormalPrice, useTime, rawPrice, voucher, activityBenefit, isPrivilege, voucherAmount, actualPrice} = this.state;
         var payLabel = SessionSave('bgg_config_init').payLabel;
@@ -73,7 +187,7 @@ export default class PayForComponent extends React.Component {
             (useHours + '小时' + Math.ceil(useMinute % 60) + '分钟') : (Math.ceil(useMinute) + '分钟');
 
         let amount = voucher ? voucherAmount ? voucherAmount : (voucher.amount / 100) : '0';
-        let privilegeDiscount = isPrivilege ? (privilegeDiscount / 100).toFixed(2) : 0;
+        let privilegeDiscount = isPrivilege ? privilegeDiscount ? (privilegeDiscount / 100).toFixed(2) : 0 : 0;
         let activityPriceP = activityOrder ? activityBenefit / 100 : 0;
 
         var totalCnt = (voucher ? actualPrice - amount * 100 <= 0 ? 0 : (actualPrice - amount * 100) / 100 : actualPrice / 100).toFixed(2);
@@ -126,7 +240,7 @@ export default class PayForComponent extends React.Component {
                      <p className = "left" > 优惠券 </p> 
                      <p className = "right" > －{this.state.voucher ? this.state.voucherAmount ? this.state.voucherAmount : this.state.voucher.amount / 100 : '0'}.00 元 </p>
                 </div> 
-                <div className = "promotionList" onClick = { this.bundleClick } >
+                <div className = "promotionList" onClick = { this.bundlePromo } >
                     <p className = "left" > 优惠券 </p>  
                     <p className = "right" > 
                         <span> { this.state.voucher ? !this.state.voucherTitle ? this.state.voucher.title : this.state.voucherTitle : '无可用优惠券' } </span> 
@@ -138,6 +252,7 @@ export default class PayForComponent extends React.Component {
                         <span className = "pay-text" > {payLabel} </span> 
                     </button> 
                 </div> 
+                <Alert alert = { this.state.alert } alertMsg = { this.state.alertMsg } comfirm = { this.comfirm} data = {this.state} /> 
             </div>
         );
     }

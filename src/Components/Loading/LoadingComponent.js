@@ -19,8 +19,9 @@ export default class LoadingComponent extends React.Component {
             alertMsg: '',
             orderId: '',
             bikeNo: ''
-
         }
+
+        this.comfirm = this.comfirm.bind(this);
     }
     componentDidMount() {
         this.bikeState();
@@ -77,7 +78,14 @@ export default class LoadingComponent extends React.Component {
                     (Number(no.slice(3)) > 499999) && (Number(no.slice(3)) <= 989999)
             ) {
                 //解锁机械锁
-                self.unLockBrief(no, data, latitude, longitude, component);
+                let param = {
+                    bikeNo: no,
+                    method: 0,
+                    longitude: longitude,
+                    latitude: latitude,
+                    considerActivity: 1
+                }
+                self.unLockBrief(param);
             } else {
                 alert('单车不存在')
             }
@@ -97,16 +105,14 @@ export default class LoadingComponent extends React.Component {
                 return;
             } else if (data.errorCode.toString() == '1003') {
                 //未缴纳押金
-                component.setState({
-                    spinner: false,
+                self.setState({
                     alert: true,
                     alertMsg: data.errorMsg,
                     type: 'deposit'
                 });
             } else if (data.errorCode.toString() == '1002') {
                 //未实名认证
-                component.setState({
-                    spinner: false,
+                self.setState({
                     alert: true,
                     alertMsg: data.errorMsg,
                     type: 'auth'
@@ -121,7 +127,7 @@ export default class LoadingComponent extends React.Component {
                 if (timer) {
                     clearInterval(timer)
                 }
-                component.setState({
+                self.setState({
                     spinner: false,
                     alert: true,
                     alertMsg: data.errorMsg,
@@ -132,7 +138,30 @@ export default class LoadingComponent extends React.Component {
     }
 
     //解锁机械锁
-    unLockBrief() {}
+    unLockBrief(da) {
+        let self = this;
+        GetPostStore.unlockBikeBrief(da, (data) => {
+            if (data.errorCode.toString() == '0') {
+                //跳到用车中
+                Navigate.toUnlockMechanicalUsing();
+                return;
+            } else if ( (data.errorCode.toString() == '1003') ) {
+                //未缴纳押金
+                self.setState({
+                    alert: true,
+                    alertMsg: data.errorMsg,
+                    type: 'deposit'
+                });
+            } else if ( (data.errorCode.toString() == '1002') ) {
+                //未实名认证
+                self.setState({
+                    alert: true,
+                    alertMsg: data.errorMsg,
+                    type: 'auth'
+                });
+            }
+        })
+    }
     //轮训解锁车辆
     unLockState(beforeUnlocking) {
         let self = this;
@@ -166,11 +195,10 @@ export default class LoadingComponent extends React.Component {
                 } else if (useStatusDate && data.data.type.toString() == '3') {
                     //用车中
                     if (beforeUnlocking) {
-                        component.setState({
-                            spinner: false,
+                        self.setState({
                             alert: true,
                             alertMsg: data.errorMsg,
-                            type: 'usingBike'
+                            type: 'unlockUsing'
                         })
                     } else {
                         Navigate.toUnlockUsing();
@@ -178,15 +206,15 @@ export default class LoadingComponent extends React.Component {
 
 
                 } else if (useStatusDate && data.data.type.toString() == '6') {
-                    component.setState({
-                        spinner: false,
+                    self.setState({
+
                         alert: true,
                         alertMsg: data.errorMsg,
                         type: 'order'
                     })
                 } else {
-                    component.setState({
-                        spinner: false,
+                    self.setState({
+
                         alert: true,
                         alertMsg: data.errorMsg,
                         type: 'default'
@@ -194,6 +222,31 @@ export default class LoadingComponent extends React.Component {
                 }
             }
         })
+    }
+
+    comfirm() {
+        this.setState({
+            alert: false
+        })
+        switch (this.state.type) {
+
+        case 'deposit':
+            Navigate.toDeposit()
+            break;
+        case 'auth':
+            Navigate.toAuth();
+            break;
+        case 'unlockUsing':
+            Navigate.toUnlockUsing();
+            break;
+        case 'order':
+            Navigate.toPayFor();
+            break;
+        default:
+            Navigate.toIndex();
+            break
+
+        }
     }
     render() {
         return <div>

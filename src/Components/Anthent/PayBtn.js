@@ -1,31 +1,44 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { sessionSave } from '../../Store/SessionStorage';
-import { store } from '../../Store/LocalStore';
-import CommonAction from '../../Action/CommonAction';
-//var GetPostStore = require('../../Store/GetPostStore');
-import { authent } from '../../Store/AuthentStore/AuthentStore'
-import AuthentAction from '../../Action/AuthentAction/AuthentAction';
-
+import React from 'react'
+import { SessionSave } from '../../Common/Public/SessionStorage'
+import Alert from '../Common/Alert'
+import CommonFn from '../../Common/Public/CommonFn'
 import $ from '../../../static/js/plugin/zepto';
-import Alert from '../Wait/Alert';
-var CommonFn = require('../../Store/CommonFn.js')
-var bgg_config = sessionSave('bgg_config');
-var GetPostStore = require('../../Store/Api/GetPostStore');
-
-
-
-var paySuccess = CommonFn.getQueryString(location.search);
-console.log(paySuccess)
+import GetPostStore from '../../Common/Api/GetPostStore'
+import Navigate from '../../Common/Public/Navigate'
+var bgg_config = SessionSave('bgg_config');
+var paySuccess = CommonFn.StringURLToJSON(location.search);
 var depositStatus,
     authStatus;
-function getStoreState() {
-    console.log(authent.getState());
-    return authent.getState();
-}
-console.log(getStoreState());
-export default React.createClass({
-    // 状态强刷
+export default class PayBtn extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            payNum: 0,
+            alert: false,
+            alertMsg: '',
+            type: ""
+        }
+
+        this.comfirm = this.comfirm.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+    componentDidMount() {
+        var self = this;
+
+        //先获取应该缴纳押金的金额\
+        if (!!paySuccess && paySuccess.paySuccess) {
+            if (paySuccess.paySuccess == 1) {
+                //强刷
+                var isForce = 1;
+                self.isForce(isForce);
+            }
+        } else {
+            var isForce = 0;
+            self.isForce(isForce);
+        }
+
+
+    }
     isForce(isForce) {
         var that = this;
         var da = {
@@ -49,17 +62,14 @@ export default React.createClass({
                         // 已交押金
                         if (authStatus == 1) {
                             //已实名认证
-                            location.replace('index.html')
+                            Navigate.toIndex();
                         } else {
                             //未实名认证
-                            location.hash = '#/02';
-                            this.state.first = true;
-                            this.state.second = false;
-                            this.state.wait = false;
+                            Navigate.toAuth();
                         }
                     } else {
                         //未交押金
-                        location.replace('authent.html#/01')
+                        Navigate.toDeposit();
                     }
                     break;
                 default:
@@ -68,34 +78,8 @@ export default React.createClass({
                 }
             },
         )
-    },
-
-    componentDidMount: function() {
-        var self = this;
-
-        //先获取应该缴纳押金的金额\
-        if (!!paySuccess && paySuccess.paySuccess) {
-            if (paySuccess.paySuccess == 1) {
-                //强刷
-                var isForce = 1;
-                self.isForce(isForce);
-            }
-        } else {
-            var isForce = 0;
-            self.isForce(isForce);
-        }
-
-
-    },
-    getInitialState: function() {
-        return ({
-            payNum: '0',
-            alert: false,
-            alertMsg: '',
-            type: ""
-        });
-    },
-    handleClick: function() {
+    }
+    handleClick() {
         var frontUrl = window.location.href;
         var da = {
             channel: bgg_config.payChannel,
@@ -134,7 +118,7 @@ export default React.createClass({
 
             }
         })
-    },
+    }
     comfirm() {
         this.setState({
             alert: false
@@ -157,9 +141,9 @@ export default React.createClass({
         default:
             break;
         }
-    },
-    render: function() {
-        let payLabel = sessionSave('bgg_config').payLabel;
+    }
+    render() {
+        let payLabel = SessionSave('bgg_config').payLabel;
         return (
             <div className="costBtn">
                 <button className="costBtnC zfb-pay" onClick={this.handleClick}>
@@ -171,4 +155,4 @@ export default React.createClass({
             </div>
         )
     }
-})
+}

@@ -1,0 +1,711 @@
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-size: 0.597333rem;
+    font-family: '微软雅黑';
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #f5f5f5;
+}
+
+#authentStep {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+}
+
+.authentStep {
+    width: 100%;
+    height: 6.826667rem;
+    background: #0090ff;
+    position: relative;
+}
+
+.aStepMain {
+    height: 1.92rem;
+    width: 13.909333rem;
+    /*margin:auto;*/
+    /*padding-top:2.5rem;*/
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+
+    position: absolute;
+    top: 2.5rem;
+    left: 50%;
+    margin-left: -6.9546665rem;
+
+    /*-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;*/
+
+}
+
+.aStep {
+    height: 100%;
+    width: 2.5rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.aStepicon {
+    width: 0.887467rem;
+    height: 0.887467rem;
+
+    background: #0090ff;
+    border-radius: 50%;
+    border: 2px solid #9cd4ff;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    position: relative;
+}
+
+.aStepicon.active {
+    /*border:2px solid #fff;*/
+    background: url(../img/right.png) center no-repeat;
+    border: none;
+    background-size: 100% 100%;
+}
+
+.aSteptit {
+    height: 0.853333rem;
+    font-family: PingFangSC;
+    font-size: 0.597333rem;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    color: #ffffff;
+    padding-top: 0.300667rem;
+    text-align: center;
+}
+
+/*实心点点*/
+.dotted {
+    height: 0.18rem;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.064rem;
+    right: -5.2rem;
+    width: 5.333333rem;
+    z-index: -1;
+}
+
+.dotted.bgf {
+    background: #fff;
+}
+
+.dotted li {
+    float: left;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    margin-right: 0.258888rem;
+    background: #fff;
+}
+
+.dotted li:first-child {
+    margin-left: 0.25rem;
+}
+
+/*费用*/
+.cost {
+    width: 4.413333rem;
+    height: 3.44rem;
+    margin: 0 auto;
+    margin-top: 3.882667rem;
+    text-align: center;margin-bottom: 8rem;
+
+}
+
+.cost_tit {
+    text-align: center;
+    font-family: '微软雅黑';
+    font-size: 0.682667rem;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    color: #222222;
+    height: 0.938667rem;
+}
+
+.cost_show {
+    font-size: 2.048rem;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    color: #000000;
+    height: 2.858667rem;
+    line-height: 2.858667rem;
+    position: relative;
+}
+
+.RMB {
+    position: absolute;
+    width: 14px;
+    height: 100%;
+    font-size: 14px;
+    right: -14px;
+    bottom: 0;
+    display: block;
+    line-height: 4rem;
+    color: #bbbbbb;
+}
+
+/*微信支付按钮*/
+.costBtn {
+    height: 3.84rem;
+    width: 14.293333rem;
+    margin: 0 auto;
+    /*margin-top:5rem;*/
+}
+
+.costBtnTit {
+    width: 100%;
+    text-align: center;
+    color: #a6aaa9;
+    font-size: 0.512rem;
+    margin-top: 0.853333rem;
+}
+
+.costBtnC {
+    color: #fff;
+    border: none;
+    width: 100%;
+    height: 2.133333rem;
+    /*background: url(../img/wxpay.png) no-repeat center;*/
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 0.682667rem;
+    /*text-indent: 1.408rem;*/
+    outline: none;
+    background-color: #0090ff;
+    border-radius: 4px;
+}
+
+.costBtn .costBtnZmxy {
+    text-align: center;
+    color: #0090ff;
+    height: 2rem;
+    line-height: 2rem;
+    width: 7.253333rem;
+    margin: auto;
+    margin-bottom: 5rem
+}
+
+/*j尖角号**/
+.spl_cur {
+    width: 1.024rem;
+    height: 1.024rem;
+    display: inline-block;
+    background: url(../img/next_step.png) no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+    top: 0.25rem;
+}
+
+.costBtn .costBtnZmxy .text {
+    color: #0090ff;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.costBtn .costBtnZmxy .left {
+    float: left;
+}
+
+.costBtn .costBtnZmxy .right {
+    float: right;
+}
+
+.costBtn .costBtnZmxy .clear {
+    clear: both;
+}
+
+.AS2_01 {
+    width: 100%;
+    height: 1.877333rem;
+    background: #fff;
+    margin-top: 0.426667rem;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.AS2_ipt {
+
+    width: 13.909333rem;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-pack: flex-start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+}
+
+.AS2_01 .AS2_ipt p {
+    width: 3.754667rem;
+    height: 0.853333rem;
+    text-align: left;
+    font-size: 0.597333rem;
+    color: #222;
+
+    line-height: 20px;
+}
+
+.AS2_01 .AS2_ipt input {
+    border: none;
+    outline: none;
+    width: 8.6rem;
+    height: 0.853333rem;
+
+}
+
+.AS2_ipt input::-webkit-input-placeholder {
+    letter-spacing: .5px;
+    color: #bbbbbb;
+    line-height: 20px;
+}
+
+/*立即认证*/
+.authentNow {
+    height: 3.84rem;
+    width: 11.946667rem;
+    margin: 0 auto;
+    margin-top: 9.301333rem;
+}
+
+.authentNowBtn {
+    color: #fff;
+    border: none;
+    width: 11.946667rem;
+    height: 2.133333rem;
+    background: #d3d3d3;
+    background-size: 100% 100%;
+    text-align: center;
+    font-size: 0.682667rem;
+    border-radius: 0.213333rem;
+    outline: none;
+}
+
+.authentNowBtn.authentNowBtnCompleted {
+
+    background: #0090ff;
+}
+
+.authentUse {
+    height: 3.84rem;
+    width: 11.946667rem;
+    margin: 0 auto;
+    margin-top: 6.301333rem;
+}
+
+/*
+*
+ 注册成功*/
+.lg_tag {
+    padding-top: .608rem;
+    width: 14.848rem;
+    height: 5.12rem;
+    background: url(../img/lgbg2.png) no-repeat center;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-top: 1.024rem;
+
+    margin-bottom: 2.133333rem;
+}
+
+.lg_tag_left {
+    width: 9.514667rem;
+    height: 100%;
+    text-align: left;
+    float: left;
+    margin-left: 1.024rem;
+}
+
+.lg_tit {
+    margin-top: 0.213333rem;
+    font-size: 0.682667rem;
+    color: #222;
+    font-weight: 500;
+    margin-bottom: 0.32rem;
+}
+
+.lg_tag_left dl {
+    font-size: 0.469333rem;
+    color: #9b9b9b;
+    margin-bottom: 0.64rem;
+}
+
+.lg_tag_left dl dt {
+    margin-bottom: 0.853333rem;
+}
+
+/*右边10元部分*/
+.lg_tag_right {
+    margin-right: .34rem;
+    width: 3.5rem;
+    height: 100%;
+    text-align: center;
+    line-height: 4rem;
+    float: right;
+}
+
+.lg_price {
+    color: #0090ff;
+    font-size: 1.536rem;
+    margin-right: 0.426667rem;
+}
+
+/*
+**认证成功展示
+ */
+.authentSuccess {
+    width: 8.9rem;
+    height: 1.024rem;
+    margin: 0 auto;
+}
+
+.AS_left {
+    float: left;
+    width: 1.024rem;
+    height: 1.024rem;
+    background: url(../img/authentSuccess.png) no-repeat center;
+    background-size: 100% 100%;
+}
+
+.AS_right {
+    float: right;
+    width: 7.568rem;
+    height: 100%;
+    line-height: 1.024rem;
+    font-family: . PingFang-SC;
+    font-size: 0.597333rem;
+    font-style: normal;
+    font-stretch: normal;
+    text-align: left;
+    color: #222222;
+}
+
+/*港澳台用户*/
+.HATusers {
+    font-size: 12px;
+    color: #0090ff;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: .5px;
+    margin-top: 0.853333rem;
+}
+
+/*
+
+支付等待
+ */
+.pay_wait {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.pay_wait.pay_wait_hide {
+    display: none;
+}
+
+.pay_wait_bg {
+    background: #ddd;
+    opacity: .6;
+    filter: alpha(opacity=60);
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    width: 4.266667rem;
+    height: 4.266667rem;
+    background: #000;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -2.133333rem;
+    margin-top: -2.133333rem;
+}
+
+@-webkit-keyframes ball-beat {
+    50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes ball-beat {
+    50% {
+        opacity: 0.2;
+        -webkit-transform: scale(0.75);
+        transform: scale(0.75);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.ball-beat > div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: inline-block;
+    -webkit-animation: ball-beat 0.7s 0s infinite linear;
+    animation: ball-beat 0.7s 0s infinite linear;
+}
+
+.ball-beat > div:nth-child(2n-1) {
+    -webkit-animation-delay: 0.35s !important;
+    animation-delay: 0.35s !important;
+}
+
+/*
+
+pcman
+ */
+@-webkit-keyframes rotate_pacman_half_up {
+    0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes rotate_pacman_half_up {
+    0% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@-webkit-keyframes rotate_pacman_half_down {
+    0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotate_pacman_half_down {
+    0% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+
+    50% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+
+@-webkit-keyframes pacman-balls {
+    75% {
+        opacity: 0.7;
+    }
+
+    100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+    }
+}
+
+@keyframes pacman-balls {
+    75% {
+        opacity: 0.7;
+    }
+
+    100% {
+        -webkit-transform: translate(-100px, -6.25px);
+        transform: translate(-100px, -6.25px);
+    }
+}
+
+.pacman {
+    position: relative;
+
+    margin-top: 20px;
+}
+
+.pacman > div:nth-child(2) {
+    -webkit-animation: pacman-balls 1s 0s infinite linear;
+    animation: pacman-balls 1s 0s infinite linear;
+}
+
+.pacman > div:nth-child(3) {
+    -webkit-animation: pacman-balls 1s 0.33s infinite linear;
+    animation: pacman-balls 1s 0.33s infinite linear;
+}
+
+.pacman > div:nth-child(4) {
+    -webkit-animation: pacman-balls 1s 0.66s infinite linear;
+    animation: pacman-balls 1s 0.66s infinite linear;
+}
+
+.pacman > div:nth-child(5) {
+    -webkit-animation: pacman-balls 1s 0.99s infinite linear;
+    animation: pacman-balls 1s 0.99s infinite linear;
+}
+
+.pacman > div:first-of-type {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #fff;
+    border-left: 25px solid #fff;
+    border-bottom: 25px solid #fff;
+    border-radius: 25px;
+    -webkit-animation: rotate_pacman_half_up 0.5s 0s infinite;
+    animation: rotate_pacman_half_up 0.5s 0s infinite;
+}
+
+.pacman > div:nth-child(2) {
+    width: 0px;
+    height: 0px;
+    border-right: 25px solid transparent;
+    border-top: 25px solid #fff;
+    border-left: 25px solid #fff;
+    border-bottom: 25px solid #fff;
+    border-radius: 25px;
+    -webkit-animation: rotate_pacman_half_down 0.5s 0s infinite;
+    animation: rotate_pacman_half_down 0.5s 0s infinite;
+    margin-top: -50px;
+}
+
+.pacman > div:nth-child(3), .pacman > div:nth-child(4), .pacman > div:nth-child(5), .pacman > div:nth-child(6) {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    -webkit-transform: translate(0, -6.25px);
+    -ms-transform: translate(0, -6.25px);
+    transform: translate(0, -6.25px);
+    top: 25px;
+    left: 100px;
+}
+
+/*解锁中提示*/
+.unlock_waiting {
+    width: 10.56rem;
+    height: 11.52rem;
+    /*background: url(../img/unlock.gif) no-repeat center;*/
+    background-size: 100% 100%;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/*加载动画gif图*/
+.unlocking {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: #f1f1f1;
+
+}
+
+.unlocking.unlockingHide {
+    display: none;
+}
+
+.unlocking img {
+    width: 100%;
+    height: 100%;
+}
+
+.unlocking p {
+    margin-top: 3.28rem;
+    font-size: 1.024rem;
+    color: #222222;
+    text-align: center;
+    margin-bottom: 0.597333rem;
+}
+
+.hide {
+    display: none;
+}
+
+
+.authent-top {
+    margin-top: 8.5rem;
+}

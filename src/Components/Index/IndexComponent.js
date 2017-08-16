@@ -123,7 +123,7 @@ export default class IndexComponent extends React.Component {
     //扫码用车
     handleScan() {
         //扫码成功之后 应该是一个地址
-        var result = 'https://www.bluegogo.com/qrcode.html?no=010000126';
+        var result = 'https://www.bluegogo.com/qrcode.html?no=755500143';
         var bikeNo = result.split("no=")[1];
         SessionSave('bgg_bikeNo', bikeNo);
         Navigate.toLoading();
