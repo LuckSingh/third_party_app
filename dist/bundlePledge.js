@@ -24877,6 +24877,7 @@ var PledgeComponent = function (_React$Component) {
             payNum: 0,
             statePay: false //是否缴纳
         };
+        _this.pay = _this.pay.bind(_this);
         return _this;
     }
     //强刷押金状态

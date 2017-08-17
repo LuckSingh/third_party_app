@@ -20,6 +20,7 @@ export default class PledgeComponent extends React.Component {
             payNum: 0,
             statePay: false //是否缴纳
         }
+        this.pay = this.pay.bind(this);
     }
     //强刷押金状态
     depositIsForce(isForce) {

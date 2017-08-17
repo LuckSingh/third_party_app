@@ -2,16 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 export default class AuthentStep extends React.Component {
     constructor(props) {
+
         super(props);
 
-        this.state = {
-            first: false,
-            second: false
-        }
     }
 
     render() {
-        let {first, second} = this.state;
+        let {first, second} = this.props.data;
         return <div className="authentStep">
 					<div className="aStepMain">
 							<div className="aStep">

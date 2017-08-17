@@ -29747,6 +29747,10 @@ var _AuthentStep = __webpack_require__(393);
 
 var _AuthentStep2 = _interopRequireDefault(_AuthentStep);
 
+var _GetPostStore = __webpack_require__(278);
+
+var _GetPostStore2 = _interopRequireDefault(_GetPostStore);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AnthentComponent = function (_React$Component) {
@@ -29757,20 +29761,77 @@ var AnthentComponent = function (_React$Component) {
 
         var _this = (0, _possibleConstructorReturn3.default)(this, (AnthentComponent.__proto__ || (0, _getPrototypeOf2.default)(AnthentComponent)).call(this, props));
 
-        _this.state = {};
+        _this.state = {
+            first: false,
+            second: false,
+            third: false
+        };
         return _this;
     }
 
     (0, _createClass3.default)(AnthentComponent, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function componentDidMount() {
+
+            this.refresh();
+        }
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps() {
+            this.refresh();
+        }
+    }, {
+        key: 'refresh',
+        value: function refresh() {
+            var _this2 = this;
+
+            _GetPostStore2.default.authStatus({
+                isForce: 0
+            }, function (res) {
+                console.log(res);
+                var depositStatus = res.data.depositStatus;
+                var authStatus = res.data.authStatus;
+                if (res.errorCode == 0) {
+                    if (depositStatus == 1 && authStatus == 1) {
+                        //实名认证了 也缴纳押金了
+                        _this2.setState({
+                            first: true,
+                            second: true,
+                            third: true
+                        });
+                    } else if (depositStatus == 1 && authStatus == 0) {
+                        //缴纳押金了
+                        _this2.setState({
+                            first: true,
+                            second: false,
+                            third: false
+                        });
+                    } else if (depositStatus == 0 && authStatus == 1) {
+                        //已经实名认证
+                        _this2.setState({
+                            first: false,
+                            second: true,
+                            third: false
+                        });
+                    } else {
+                        //没有缴纳押金 并且没有实名认证
+                        _this2.setState({
+                            first: false,
+                            second: false,
+                            third: false
+                        });
+                    }
+                }
+            });
+        }
     }, {
         key: 'render',
         value: function render() {
+
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_AuthentStep2.default, null),
+                _react2.default.createElement(_AuthentStep2.default, { data: this.state }),
                 this.props.children
             );
         }
@@ -29934,6 +29995,8 @@ var _GetPostStore = __webpack_require__(278);
 
 var _GetPostStore2 = _interopRequireDefault(_GetPostStore);
 
+var _SessionStorage = __webpack_require__(129);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AuthentStepAuth = function (_React$Component) {
@@ -30015,8 +30078,6 @@ var AuthentStepAuth = function (_React$Component) {
     }, {
         key: 'handleBtnClick',
         value: function handleBtnClick() {
-            var _this2 = this;
-
             if (!(this.state.IDCompleted && this.state.nameCompleted)) return;
 
             var name = this.refs.Name.value;
@@ -30046,14 +30107,10 @@ var AuthentStepAuth = function (_React$Component) {
                         alert('请重新登录');
                         break;
                     case '0':
-                        console.log('认证成功');
-                        //认证成功显示
-                        _this2.state.secondData.nameCompleted = _this2.state.secondData.IDCompleted = true;
-                        _this2.state.second = true;
-                        _this2.pass.presentShow = data.data;
-                        store('data', data.data);
-                        console.log(store('data', data.data));
-                        location.hash = '#/03';
+                        console.log(data.data);
+
+                        (0, _SessionStorage.SessionSave)('bgg_presentShow', data.data);
+                        location.hash = '#/complete';
                         break;
                     default:
                         break;
@@ -30163,6 +30220,12 @@ var _reactDom = __webpack_require__(78);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _SessionStorage = __webpack_require__(129);
+
+var _Alert = __webpack_require__(290);
+
+var _Alert2 = _interopRequireDefault(_Alert);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AnthentStepComplete = function (_React$Component) {
@@ -30173,20 +30236,40 @@ var AnthentStepComplete = function (_React$Component) {
 
         var _this = (0, _possibleConstructorReturn3.default)(this, (AnthentStepComplete.__proto__ || (0, _getPrototypeOf2.default)(AnthentStepComplete)).call(this, props));
 
-        _this.state = {};
+        _this.state = {
+            presentShow: {
+                title: '',
+                invalidDate: '',
+                desc: '',
+                amount: ''
+            }
+        };
+
+        _this.handleClick = _this.handleClick.bind(_this);
         return _this;
     }
 
     (0, _createClass3.default)(AnthentStepComplete, [{
         key: 'componentDidMount',
-        value: function componentDidMount() {}
+        value: function componentDidMount() {
+
+            this.setState({
+                presentShow: (0, _SessionStorage.SessionSave)('bgg_presentShow')
+            });
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick() {
+            //调用扫一扫
+            alert('扫一扫');
+        }
     }, {
         key: 'render',
         value: function render() {
-            // let invalidDate = this.state.presentShow.invalidDate
-            // let year = new Date(invalidDate * 1000).getFullYear();
-            // let month = new Date(invalidDate * 1000).getMonth() + 1;
-            // let day = new Date(invalidDate * 1000).getDate();
+            var invalidDate = this.state.presentShow.invalidDate;
+            var year = new Date(invalidDate * 1000).getFullYear();
+            var month = new Date(invalidDate * 1000).getMonth() + 1;
+            var day = new Date(invalidDate * 1000).getDate();
             return _react2.default.createElement(
                 'div',
                 null,
@@ -30259,8 +30342,7 @@ var AnthentStepComplete = function (_React$Component) {
                         '\u7ACB\u5373\u626B\u7801\u7528\u8F66'
                     )
                 ),
-                _react2.default.createElement(UnlockWait, { unlocking: this.state.unlocking }),
-                _react2.default.createElement(Alert, { alert: this.state.alert, alertMsg: this.state.alertMsg, openSys: this.openSys, cancel: this.cancel })
+                _react2.default.createElement(_Alert2.default, { alert: this.state.alert, alertMsg: this.state.alertMsg, comfirm: this.comfirm, data: this.state })
             );
         }
     }]);
@@ -31408,22 +31490,15 @@ var AuthentStep = function (_React$Component) {
 
 	function AuthentStep(props) {
 		(0, _classCallCheck3.default)(this, AuthentStep);
-
-		var _this = (0, _possibleConstructorReturn3.default)(this, (AuthentStep.__proto__ || (0, _getPrototypeOf2.default)(AuthentStep)).call(this, props));
-
-		_this.state = {
-			first: false,
-			second: false
-		};
-		return _this;
+		return (0, _possibleConstructorReturn3.default)(this, (AuthentStep.__proto__ || (0, _getPrototypeOf2.default)(AuthentStep)).call(this, props));
 	}
 
 	(0, _createClass3.default)(AuthentStep, [{
 		key: 'render',
 		value: function render() {
-			var _state = this.state,
-			    first = _state.first,
-			    second = _state.second;
+			var _props$data = this.props.data,
+			    first = _props$data.first,
+			    second = _props$data.second;
 
 			return _react2.default.createElement(
 				'div',

@@ -1,20 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import { SessionSave } from '../../Common/Public/SessionStorage'
+import Alert from '../Common/Alert'
 export default class AnthentStepComplete extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-
+            presentShow: {
+                title: '',
+                invalidDate: '',
+                desc: '',
+                amount: ''
+            }
         }
+
+        this.handleClick = this.handleClick.bind(this);
     }
-    componentDidMount() {}
+    componentDidMount() {
+
+        this.setState({
+            presentShow: SessionSave('bgg_presentShow')
+        })
+    }
+
+    handleClick() {
+        //调用扫一扫
+        alert('扫一扫');
+    }
 
     render() {
-        // let invalidDate = this.state.presentShow.invalidDate
-        // let year = new Date(invalidDate * 1000).getFullYear();
-        // let month = new Date(invalidDate * 1000).getMonth() + 1;
-        // let day = new Date(invalidDate * 1000).getDate();
+        let invalidDate = this.state.presentShow.invalidDate
+        let year = new Date(invalidDate * 1000).getFullYear();
+        let month = new Date(invalidDate * 1000).getMonth() + 1;
+        let day = new Date(invalidDate * 1000).getDate();
         return (
             <div>
                 <div className="lg_tag">
@@ -40,8 +59,8 @@ export default class AnthentStepComplete extends React.Component {
                 <div className="authentUse">
                     <button className="authentNowBtn authentNowBtnCompleted" onClick={this.handleClick}>立即扫码用车</button>
                 </div>              
-                <UnlockWait unlocking={this.state.unlocking}/>
-                <Alert alert={this.state.alert} alertMsg={this.state.alertMsg} openSys={this.openSys} cancel={this.cancel}/>
+               
+                 <Alert alert = { this.state.alert } alertMsg = { this.state.alertMsg } comfirm = { this.comfirm} data = {this.state} /> 
             </div>
         );
     }

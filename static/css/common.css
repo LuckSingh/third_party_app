@@ -136,6 +136,11 @@
   margin:0 auto;
   text-align: center;
 }
+.AlertDesc span{
+  border:1px solid #ccc;
+  font-size: 0.298667rem;
+}
+
 .AlertDesc span.active{
   color:#fff;
   background: #0090ff;
